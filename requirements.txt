@@ -1,0 +1,2 @@
+canonicaljson==2.0.0
+jcs==0.1.3
