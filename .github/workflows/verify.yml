@@ -1,8 +1,8 @@
-name: Global Hash Verification
+name: Global Chain Verification
 on: [push, workflow_dispatch]
 
 jobs:
-  verify-hash:
+  verify-chain:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -13,8 +13,7 @@ jobs:
           python-version: '3.11'
           
       - name: Install Dependencies
-        run: |
-          pip install -r requirements.txt
+        run: pip install -r requirements.txt
           
-      - name: Generate Node 2 Hash
-        run: python genesis_generator.py
+      - name: Run Decision Notary
+        run: python decision_notary.py
